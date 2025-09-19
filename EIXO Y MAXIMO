@@ -1,0 +1,7 @@
+Eixo Y MAX = 
+VAR vTabela = ALLSELECTED(dCALENDARIO[MesNomeIniciais],dCALENDARIO[MesNum])
+VAR vValorMaiorAtual = MAXX(vTabela, [MEDIDA])
+VAR vMaiorValorAnterior = MAXX(vTabela, [MEDIDA LY])
+VAR vValorMaior = MAX(vValorMaiorAtual,vMaiorValorAnterior)
+RETURN 
+vValorMaior * 1.1
