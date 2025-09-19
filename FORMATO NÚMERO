@@ -1,0 +1,22 @@
+VAR vVALOR = SELECTEDMEASURE()
+VAR vFORMATO_P = 
+SWITCH
+(
+    TRUE(),
+    vVALOR >= 1000000000, "#0,,,.0 B",
+    vVALOR >= 1000000, "#0,,.0 M",
+    vVALOR >= 1000, "#0,.0 K",
+    "#0"
+)
+
+VAR vFORMATO_N = 
+SWITCH
+(
+    TRUE(),
+    vVALOR <= -1000000000, "#0,,,.0 B",
+    vVALOR <= -1000000, "#0,,.0 M",
+    vVALOR <= -1000, "#0,.0 K",
+    "#0"
+)
+RETURN 
+IF(vVALOR >= 0, vFORMATO_P, vFORMATO_N)
