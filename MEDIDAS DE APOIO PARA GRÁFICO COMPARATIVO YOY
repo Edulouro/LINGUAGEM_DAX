@@ -1,0 +1,31 @@
+SAC_I = 
+VAR vVariacao = [% YoY Medidas Vendas]
+VAR vAtual = [Seleção Medidas Vendas]
+VAR vAnterior = [Medidas Vendas LY]
+
+RETURN
+    IF(vVariacao >= 0, vAnterior)
+*************************************************************************
+SAC_S = 
+VAR vVariacao = [% YoY Medidas Vendas]
+VAR vAtual = [Seleção Medidas Vendas]
+VAR vAnterior = [Medidas Vendas LY]
+
+RETURN
+    IF(vVariacao >= 0 && NOT ISBLANK(vVariacao), vAtual)
+*************************************************************************
+SAB_I = 
+VAR vVariacao = [% YoY Medidas Vendas]
+VAR vAtual = [Seleção Medidas Vendas]
+VAR vAnterior = [Medidas Vendas LY]
+
+RETURN
+    IF(vVariacao < 0, vAtual)
+*************************************************************************
+SAB_S = 
+VAR vVariacao = [% YoY Medidas Vendas]
+VAR vAtual = [Seleção Medidas Vendas]
+VAR vAnterior = [Medidas Vendas LY]
+
+RETURN
+    IF(vVariacao < 0, vAnterior)
