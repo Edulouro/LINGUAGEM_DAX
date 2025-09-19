@@ -1,0 +1,8 @@
+Projecao Added Ano Atual = 
+VAR MesAtual = MONTH(TODAY())
+VAR VendasYTD = TOTALYTD([VENDAS], dCALENDARIO[Data])
+VAR MediaVendasMes = DIVIDE(VendasYTD,MesAtual)
+VAR MesesRestantes = 12 - MesAtual
+VAR ProJMesesRestantes = MediaVendasMes * MesesRestantes
+RETURN 
+VendasYTD + ProJMesesRestantes
