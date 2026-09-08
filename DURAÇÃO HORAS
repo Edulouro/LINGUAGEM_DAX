@@ -1,0 +1,9 @@
+Duração (hh:mm:ss) = 
+VAR vTotal = [Duração (segundos)]
+VAR vHoras = INT(vTotal / 3600)
+VAR vMinutosSobra = MOD(vTotal, 3600)
+VAR vMinutos = INT(vMinutosSobra / 60)
+VAR vSegundos = MOD(vMinutosSobra, 60)
+VAR vHoraMinutoSegundo = vHoras * 10000 + vMinutos * 100 + vSegundos
+RETURN
+vHoraMinutoSegundo
